@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_color"
+    tools:context=".MainActivity"
+    android:padding="8dp">
+
+    <!-- Search Bar and Dropdown Menu in the Same Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@color/cardBackgroundColor"
+        android:elevation="4dp"
+        android:gravity="center_vertical">
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search"
+            android:padding="12dp"
+            android:background="@drawable/search_bar_background"
+            android:drawableStart="@drawable/baseline_search_24"
+            android:inputType="text"
+            android:textColor="@color/primaryTextColor"
+            android:textColorHint="@color/secondaryTextColor"
+            android:elevation="2dp"
+            android:autofillHints="" />
+
+        <!-- Dropdown Menu Button -->
+        <ImageButton
+            android:id="@+id/dropdown_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_category_24"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Dropdown Menu"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@color/primaryIconColor"
+            android:padding="12dp"/>
+    </LinearLayout>
+
+    <!-- Horizontal RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/horizontalRecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:clipToPadding="false"/>
+
+    <!-- Main RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
